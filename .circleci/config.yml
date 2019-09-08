@@ -1,0 +1,10 @@
+version: 1
+jobs:
+  build:
+    docker:
+      - image: ubuntu:xenial
+    working_directory: ~/wumpus
+    steps:
+      - run:
+          name: CMake Configure
+          command: mkdir build && cd build && cmake ..

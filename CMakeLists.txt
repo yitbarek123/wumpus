@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(wumpus)
+add_subdirectory(test)
+add_subdirectory(src)
+add_executable(wumpus src/main.cpp)
+target_link_libraries(wumpus test)
+install(TARGETS wumpus DESTINATION bin)
