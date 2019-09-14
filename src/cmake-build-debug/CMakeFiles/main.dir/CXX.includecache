@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yitbarek/Desktop/Wumpus/src/game.h
+iostream
+-
+
+/home/yitbarek/Desktop/Wumpus/src/main.cpp
+iostream
+-
+game.h
+/home/yitbarek/Desktop/Wumpus/src/game.h
+
