@@ -63,6 +63,7 @@ void wumpus::build_env()
         cout<<"********************************"<<endl<<"|";
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
+                delayFor(1);
                 if(i==0&&j==0){
                     cout<<"Agent"<<i<<j<<" "<<"| ";
                 }
@@ -150,7 +151,7 @@ void wumpus::build_env()
 
         cout<<"I am at position"<<m<<n<<endl;
         while(true) {
-
+            delayFor(1);
             if (m < 3 && n < 3) {
                 if (wumpus::check_wumpus(m + 1, n + 1) == true &&(m+1<4 && n+1<4)) {
                     cout << "wumpus is at" << m + 1 << n + 1 << endl;
@@ -287,10 +288,11 @@ void wumpus::build_env()
 
     }
 
-    void delayFor(int length){
-        sleep_for(nanoseconds(10));
-        sleep_until(system_clock::now() + seconds(length));
+    void wumpus::delayFor(int length) {
 
-    }
+            sleep_for(nanoseconds(10));
+            sleep_until(system_clock::now() + seconds(length));
+}
+
 
 

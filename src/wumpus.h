@@ -20,4 +20,6 @@ public:
     bool check_failed(int i, int j);
 
     bool play();
+
+    void delayFor(int length);
 };

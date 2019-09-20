@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb9f7bf-51c0-40ca-9170-57fef3fa7ed6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wumpus.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/wumpus.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wumpus.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/wumpus.h" afterDir="false" />
