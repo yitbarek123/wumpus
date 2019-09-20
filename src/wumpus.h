@@ -2,7 +2,7 @@
 // Created by yitbarek on 9/20/19.
 //
 
-using namespace std;
+
 
 
 class wumpus {

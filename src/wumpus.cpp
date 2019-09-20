@@ -4,6 +4,12 @@
 
 #include <iostream>
 #include "wumpus.h"
+#include <chrono>
+#include <thread>
+
+using namespace std::this_thread;
+using namespace std::chrono;
+
 
 static int game[4][4];
 static int unsafe[4][2];
@@ -278,6 +284,12 @@ void wumpus::build_env()
                 return false;
             }
         }
+
+    }
+
+    void delayFor(int length){
+        sleep_for(nanoseconds(10));
+        sleep_until(system_clock::now() + seconds(length));
 
     }
 
