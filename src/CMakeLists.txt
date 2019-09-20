@@ -1,1 +1,1 @@
-add_executable(main main.cpp game.h)
+add_executable(main main.cpp wumpus.cpp wumpus.h)

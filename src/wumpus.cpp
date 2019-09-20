@@ -3,16 +3,14 @@
 //
 
 #include <iostream>
-using namespace std;
+#include "wumpus.h"
 
- class wumpus{
-    static int game[4][4];
-    static int unsafe[4][2];
-    static int traversed[16][2];
-
-    public: void build_env()
+static int game[4][4];
+static int unsafe[4][2];
+static int traversed[16][2];
+void wumpus::build_env()
     {
-        int game[4][4];
+        //int game[4][4];
 
         for(int i=0;i<4;i++) {
             for(int j=0;j<4;j++){
@@ -93,10 +91,10 @@ using namespace std;
                 cout<<"|";
             }
         }
-        play(game);
+        play();
     }
 
-    bool check_pit(int i, int j,int game[][4])
+    bool wumpus::check_pit(int i, int j)
     {
         if(i>0&&j>0) {
             if ((game[i - 1][j] != 6 || game[i][j - 1] != 6) || (game[i - 1][j] != 11 || game[i][j - 1] != 11)) {
@@ -106,7 +104,7 @@ using namespace std;
         true;
     }
 
-    bool check_wumpus(int i,int j,int game[][4])
+    bool wumpus::check_wumpus(int i,int j)
     {
         if(i>0&&j>0) {
             if ((game[i - 1][j] == 5 || game[i - 1][j] == 11) && (game[i][j - 1] == 5 || game[i][j - 1] == 11)) {
@@ -116,7 +114,7 @@ using namespace std;
         return false;
     }
 
-    bool check_gold(int i,int j,int game[][4])
+    bool wumpus::check_gold(int i,int j)
     {
         if(game[i][j]>50){
             cout<<"the gold is at"<<i<<j;
@@ -125,7 +123,7 @@ using namespace std;
         return false;
     }
 
-public: bool check_failed(int i,int j,int game[][4])
+     bool wumpus::check_failed(int i,int j)
     {
         if((game[i][j]==-1)||(game[i][j]==-2)){
             cout<<"failed at"<<i<<j;
@@ -134,7 +132,7 @@ public: bool check_failed(int i,int j,int game[][4])
         return false;
     }
 
-    bool play(int game[][4])
+    bool wumpus::play()
     {
         int m=0;
         int n=0;
@@ -148,24 +146,24 @@ public: bool check_failed(int i,int j,int game[][4])
         while(true) {
 
             if (m < 3 && n < 3) {
-                if (check_wumpus(m + 1, n + 1, game) == true &&(m+1<4 && n+1<4)) {
+                if (wumpus::check_wumpus(m + 1, n + 1) == true &&(m+1<4 && n+1<4)) {
                     cout << "wumpus is at" << m + 1 << n + 1 << endl;
                     game[m + 1][n + 1] = 0;
                     game[m][n + 1] -= 5;
                     game[m + 1][n] -= 5;
                     game[m + 2][n + 1] -= 5;
                     game[m + 1][n + 2] -= 5;
-                    if (check_gold(m + 1, n + 1, game) == true) {
+                    if (check_gold(m + 1, n + 1) == true) {
                         return false;
                     }
                     if (game[m][n + 1] == 0) {
                         cout << "wumpus is killed" << endl;
                         cout << "I am at" << m << n + 1 << endl;
-                        if (check_gold(m, n + 1, game) == true || check_failed(m,n+1,game)==true &&(m<4&&n+1<4)) {
+                        if (check_gold(m, n + 1) == true || check_failed(m,n+1)==true &&(m<4&&n+1<4)) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n + 1 << endl;
-                        if (check_gold(m + 1, n + 1, game) == true || check_failed(m + 1, n + 1, game) == true && (m+1<4&&n+1<4)) {
+                        if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true && (m+1<4&&n+1<4)) {
                             return false;
                         }
                         m = m + 1;
@@ -175,11 +173,11 @@ public: bool check_failed(int i,int j,int game[][4])
                     if (game[m + 1][n] == 0) {
                         cout << "wumpus is killed" << endl;
                         cout << "I am at" << m + 1 << n << endl;
-                        if (check_gold(m + 1, n, game) == true || check_failed(m + 1, n, game) == true &&(m+1<4&&n<4)) {
+                        if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true &&(m+1<4&&n<4)) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n + 1 << endl;
-                        if (check_gold(m + 1, n + 1, game) == true || check_failed(m + 1, n + 1, game) == true&&(m<4&&n<4)) {
+                        if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true&&(m<4&&n<4)) {
                             return false;
                         }
                         m = m + 1;
@@ -188,28 +186,28 @@ public: bool check_failed(int i,int j,int game[][4])
                     }
                 }
 
-                if (check_pit(m + 1, n + 1, game) == false && (m<4 && n<4)) {
+                if (check_pit(m + 1, n + 1) == false && (m<4 && n<4)) {
                     cout << "no pit at" << m + 1 << n + 1 << endl;
-                    if (check_pit(m, n + 1, game) == false) {
+                    if (check_pit(m, n + 1) == false) {
                         cout << "I am at" << m << n + 1 << endl;
-                        if (check_gold(m, n + 1, game) == true || check_failed(m, n + 1, game) == true) {
+                        if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n + 1 << endl;
-                        if (check_gold(m + 1, n + 1, game) == true || check_failed(m + 1, n + 1, game) == true) {
+                        if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
                             return false;
                         }
                         n = n + 1;
                         m = m + 1;
 
                     }
-                    if (check_pit(m + 1, n, game) == false) {
+                    if (check_pit(m + 1, n) == false) {
                         cout << "I am at" << m + 1 << n << endl;
-                        if (check_gold(m + 1, n, game) == true || check_failed(m + 1, n, game) == true) {
+                        if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n + 1 << endl;
-                        if (check_gold(m + 1, n + 1, game) == true || check_failed(m + 1, n + 1, game) == true) {
+                        if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
                             return false;
                         }
                         m = m + 1;
@@ -224,15 +222,15 @@ public: bool check_failed(int i,int j,int game[][4])
                     temp1 = m;
                     temp2 = n;
                     //upper diagonal
-                    if (check_pit(m - 1, n + 1, game) == false ) {
+                    if (check_pit(m - 1, n + 1) == false ) {
                         cout << "no pit at" << m - 1 << n + 1 << endl;
-                        if (check_pit(m - 1, n, game) == false &&(m<4&&n<4)) {
+                        if (check_pit(m - 1, n) == false &&(m<4&&n<4)) {
                             cout << "I am at" << m - 1 << n << endl;
-                            if (check_gold(m - 1, n, game) == true || check_failed(m - 1, n, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             cout << "I am at" << m - 1 << n + 1 << endl;
-                            if (check_gold(m - 1, n + 1, game) == true || check_failed(m - 1, n + 1, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m - 1, n + 1) == true || check_failed(m - 1, n + 1) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             n = n + 1;
@@ -243,27 +241,27 @@ public: bool check_failed(int i,int j,int game[][4])
                     m = temp1;
                     n = temp2;
                     //lower diagonal
-                    if (check_pit(m + 1, n - 1, game) == false &&(m<4&&n<4)) {
+                    if (check_pit(m + 1, n - 1) == false &&(m<4&&n<4)) {
                         cout << "no pit at" << m + 1 << n - 1 << endl;
-                        if (check_pit(m, n - 1, game) == false) {
+                        if (check_pit(m, n - 1) == false) {
                             cout << "I am at" << m << n - 1 << endl;
-                            if (check_gold(m, n - 1, game) == true || check_failed(m, n - 1, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m, n - 1) == true || check_failed(m, n - 1) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             cout << "I am at" << m + 1 << n - 1 << endl;
-                            if (check_gold(m + 1, n - 1, game) == true || check_gold(m + 1, n - 1, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m + 1, n - 1) == true || check_gold(m + 1, n - 1) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             n = n - 1;
                             m = m + 1;
                         }
-                        if (check_pit(m + 1, n, game) == false &&(m<4&&n<4)) {
+                        if (check_pit(m + 1, n) == false &&(m<4&&n<4)) {
                             cout << "I am at" << m << n + 1 << endl;
-                            if (check_gold(m, n + 1, game) == true || check_gold(m, n + 1, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m, n + 1) == true || check_gold(m, n + 1) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             cout << "I am at" << m + 1 << n - 1 << endl;
-                            if (check_gold(m + 1, n - 1, game) == true || check_gold(m + 1, n - 1, game) == true &&(m<4&&n<4)) {
+                            if (check_gold(m + 1, n - 1) == true || check_gold(m + 1, n - 1) == true &&(m<4&&n<4)) {
                                 return false;
                             }
                             m = m + 1;
@@ -283,4 +281,4 @@ public: bool check_failed(int i,int j,int game[][4])
 
     }
 
-};
+

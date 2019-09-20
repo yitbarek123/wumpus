@@ -1,4 +1,4 @@
-# Install script for directory: /home/yitbarek/Desktop/Wumpus/src
+# Install script for directory: /home/yitbarek/Desktop/experment/wumpus/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yitbarek/Desktop/Wumpus/src/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yitbarek/Desktop/experment/wumpus/src/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

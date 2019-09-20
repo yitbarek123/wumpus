@@ -48,10 +48,10 @@ RM = /opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yitbarek/Desktop/Wumpus/src
+CMAKE_SOURCE_DIR = /home/yitbarek/Desktop/experment/wumpus/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yitbarek/Desktop/Wumpus/src/cmake-build-debug
+CMAKE_BINARY_DIR = /home/yitbarek/Desktop/experment/wumpus/src/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yitbarek/Desktop/Wumpus/src/cmake-build-debug/CMakeFiles /home/yitbarek/Desktop/Wumpus/src/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yitbarek/Desktop/experment/wumpus/src/cmake-build-debug/CMakeFiles /home/yitbarek/Desktop/experment/wumpus/src/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yitbarek/Desktop/Wumpus/src/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yitbarek/Desktop/experment/wumpus/src/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+wumpus.o: wumpus.cpp.o
+
+.PHONY : wumpus.o
+
+# target to build an object file
+wumpus.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/wumpus.cpp.o
+.PHONY : wumpus.cpp.o
+
+wumpus.i: wumpus.cpp.i
+
+.PHONY : wumpus.i
+
+# target to preprocess a source file
+wumpus.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/wumpus.cpp.i
+.PHONY : wumpus.cpp.i
+
+wumpus.s: wumpus.cpp.s
+
+.PHONY : wumpus.s
+
+# target to generate assembly for a file
+wumpus.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/wumpus.cpp.s
+.PHONY : wumpus.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... wumpus.o"
+	@echo "... wumpus.i"
+	@echo "... wumpus.s"
 .PHONY : help
 
 

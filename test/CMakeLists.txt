@@ -1,2 +1,1 @@
-add_executable(checktest checktest.cpp)
-
+ADD_CXXTEST(gameunittest)

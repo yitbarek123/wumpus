@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/yitbarek/Desktop/Wumpus/src/game.h
+/home/yitbarek/Desktop/experment/wumpus/src/main.cpp
 iostream
 -
+wumpus.h
+/home/yitbarek/Desktop/experment/wumpus/src/wumpus.h
 
-/home/yitbarek/Desktop/Wumpus/src/main.cpp
-iostream
--
-game.h
-/home/yitbarek/Desktop/Wumpus/src/game.h
+/home/yitbarek/Desktop/experment/wumpus/src/wumpus.h
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "game.h"
+#include "wumpus.h"
 using namespace std;
 
 int main() {
