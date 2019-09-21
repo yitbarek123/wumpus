@@ -8,3 +8,6 @@ jobs:
       - run:
           name: CMake Configure
           command: mkdir build && cd build && cmake ..
+       - run:
+          name: Run tests
+          command: cd build && make -j2 test
