@@ -1,8 +1,6 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.12)
 project(wumpus)
-add_subdirectory(test)
-add_subdirectory(src)
-add_executable(wumpus src/main.cpp)
-add_executable(wumpus test/checktest.cpp)
-target_link_libraries(wumpus test)
-install(TARGETS wumpus DESTINATION bin)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(wumpus wumpus/main.cpp wumpus/wumpus.cpp wumpus/wumpus.h)
