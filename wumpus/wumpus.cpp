@@ -9,6 +9,7 @@ static int game[4][4];
 static int unsafe[4][2];
 static int traversed[16][2];
 
+
 void wumpus::build_env() {
     //int game[4][4];
 
@@ -113,10 +114,10 @@ bool wumpus::check_wumpus(int i, int j) {
 }
 
 bool wumpus::check_gold(int i, int j) {
-    if (game[i][j] > 50) {
-        cout << "the gold is at" << i << j;
-        return true;
-    }
+//    if (game[i][j] > 50) {
+  //      cout << "the gold is at" << i << j;
+    //    return true;
+    //}
     return false;
 }
 
