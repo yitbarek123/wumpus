@@ -1,0 +1,34 @@
+//
+// Created by yitbarek on 9/25/19.
+//
+
+#include <cxxtest/TestSuite.h>
+#include "../wumpus/wumpus.cpp"
+class gametest : public CxxTest::TestSuite
+{
+
+
+public:
+    void testgamefailled( void ) {
+
+        TS_ASSERT_EQUALS(true, true);
+    }
+    void test_pit( void )
+    {
+
+        TS_ASSERT_EQUALS(true, true );
+    }
+    void test_gold( void )
+    {
+
+        TS_ASSERT_EQUALS(true, true );
+    }
+    void test_wumpus( void )
+    {
+
+        TS_ASSERT_EQUALS(true, true );
+    }
+
+
+
+};
