@@ -3,7 +3,12 @@
 //
 
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include "wumpus.h"
+
+using namespace std::this_thread;
+using namespace std::chrono;
 
 
 static int game[4][4];
@@ -278,6 +283,11 @@ bool wumpus::play() {
         }
 
     }
+}
+
+void wumpus::delayPrint(int durationInSeconds) {
+    sleep_for(nanoseconds(10));
+    sleep_until(system_clock::now() + seconds(durationInSeconds));
 }
 
 
