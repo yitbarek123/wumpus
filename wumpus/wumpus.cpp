@@ -12,13 +12,7 @@ using namespace std::chrono;
 
 
 static int game[4][4];
-<<<<<<< 634a5d57f3d784d971ba1e905aa8ca2ebf23bdc7
-
-=======
-static int unsafe[4][2];
-static int traversed[16][2];
 static int preferedDuration = 2;
->>>>>>> [Feature] compeleted delay befor print functionality
 
 void wumpus::build_env() {
 
