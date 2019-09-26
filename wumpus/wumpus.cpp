@@ -5,13 +5,11 @@
 #include <iostream>
 #include "wumpus.h"
 
+
 static int game[4][4];
-static int unsafe[4][2];
-static int traversed[16][2];
 
 
 void wumpus::build_env() {
-    //int game[4][4];
 
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -55,7 +53,10 @@ void wumpus::build_env() {
             }
         }
     }
-    cout << "********************************" << endl << "|";
+}
+
+void wumpus::build_ui(){
+cout << "********************************" << endl << "|";
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             if (i == 0 && j == 0) {
@@ -92,7 +93,6 @@ void wumpus::build_env() {
             cout << "|";
         }
     }
-    play();
 }
 
 bool wumpus::check_pit(int i, int j) {
@@ -114,10 +114,10 @@ bool wumpus::check_wumpus(int i, int j) {
 }
 
 bool wumpus::check_gold(int i, int j) {
-//    if (game[i][j] > 50) {
-  //      cout << "the gold is at" << i << j;
-    //    return true;
-    //}
+    if (game[i][j] > 50) {
+        cout << "the gold is at" << i << j;
+        return true;
+    }
     return false;
 }
 
@@ -185,6 +185,7 @@ bool wumpus::play() {
 
             if (check_pit(m + 1, n + 1) == false && (m < 4 && n < 4)) {
                 cout << "no pit at" << m + 1 << n + 1 << endl;
+
                 if (check_pit(m, n + 1) == false) {
                     cout << "I am at" << m << n + 1 << endl;
                     if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
@@ -275,8 +276,8 @@ bool wumpus::play() {
             cout << "I have failled at" << m << n;
             return false;
         }
-    }
 
+    }
 }
 
 
