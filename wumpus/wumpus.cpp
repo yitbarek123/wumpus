@@ -3,11 +3,15 @@
 //
 
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include "wumpus.h"
 
+using namespace std::this_thread;
+using namespace std::chrono;
 
 static int game[4][4];
-
+static int preferedDurarion = 2;
 
 void wumpus::build_env() {
 
@@ -87,6 +91,7 @@ cout << "********************************" << endl << "|";
                 cout << "gold" << i << j << " " << " | ";
             }
         }
+        this->delayPrint(preferedDurarion);
         cout << endl;
         cout << "********************************" << endl;
         if (i < 3) {
@@ -139,6 +144,7 @@ bool wumpus::play() {
     bool diagonal_checked = false;
 
     cout << "I am at position" << m << n << endl;
+    this->delayPrint(preferedDurarion);
     while (true) {
 
         if (m < 3 && n < 3) {
@@ -159,6 +165,7 @@ bool wumpus::play() {
                         return false;
                     }
                     cout << "I am at" << m + 1 << n + 1 << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n + 1) == true ||
                         check_failed(m + 1, n + 1) == true && (m + 1 < 4 && n + 1 < 4)) {
                         return false;
@@ -170,10 +177,12 @@ bool wumpus::play() {
                 if (game[m + 1][n] == 0) {
                     cout << "wumpus is killed" << endl;
                     cout << "I am at" << m + 1 << n << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true && (m + 1 < 4 && n < 4)) {
                         return false;
                     }
                     cout << "I am at" << m + 1 << n + 1 << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true && (m < 4 && n < 4)) {
                         return false;
                     }
@@ -188,10 +197,12 @@ bool wumpus::play() {
 
                 if (check_pit(m, n + 1) == false) {
                     cout << "I am at" << m << n + 1 << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
                         return false;
                     }
                     cout << "I am at" << m + 1 << n + 1 << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
                         return false;
                     }
@@ -201,10 +212,12 @@ bool wumpus::play() {
                 }
                 if (check_pit(m + 1, n) == false) {
                     cout << "I am at" << m + 1 << n << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true) {
                         return false;
                     }
                     cout << "I am at" << m + 1 << n + 1 << endl;
+                    this->delayPrint(preferedDurarion);
                     if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
                         return false;
                     }
@@ -224,10 +237,12 @@ bool wumpus::play() {
                     cout << "no pit at" << m - 1 << n + 1 << endl;
                     if (check_pit(m - 1, n) == false && (m < 4 && n < 4)) {
                         cout << "I am at" << m - 1 << n << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         cout << "I am at" << m - 1 << n + 1 << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m - 1, n + 1) == true ||
                             check_failed(m - 1, n + 1) == true && (m < 4 && n < 4)) {
                             return false;
@@ -244,10 +259,12 @@ bool wumpus::play() {
                     cout << "no pit at" << m + 1 << n - 1 << endl;
                     if (check_pit(m, n - 1) == false) {
                         cout << "I am at" << m << n - 1 << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m, n - 1) == true || check_failed(m, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n - 1 << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m + 1, n - 1) == true || check_gold(m + 1, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
@@ -256,10 +273,12 @@ bool wumpus::play() {
                     }
                     if (check_pit(m + 1, n) == false && (m < 4 && n < 4)) {
                         cout << "I am at" << m << n + 1 << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m, n + 1) == true || check_gold(m, n + 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         cout << "I am at" << m + 1 << n - 1 << endl;
+                        this->delayPrint(preferedDurarion);
                         if (check_gold(m + 1, n - 1) == true || check_gold(m + 1, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
@@ -278,6 +297,11 @@ bool wumpus::play() {
         }
 
     }
+}
+
+void wumpus::delayPrint(int durationInSeconds) {
+    sleep_for(nanoseconds(10));
+    sleep_until(system_clock::now() + seconds(durationInSeconds));
 }
 
 

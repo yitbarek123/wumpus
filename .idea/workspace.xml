@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="wumpus" targetName="wumpus" />
       <config projectName="wumpus" targetName="gameunittest" />
+      <config projectName="wumpus" targetName="wumpus" />
       <config projectName="wumpus" targetName="runner" />
     </generated>
   </component>
@@ -14,146 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb9f7bf-51c0-40ca-9170-57fef3fa7ed6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.swp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../conceptnet.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../python/cat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../python/python.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/.schemas.scm.swp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/ghost/restaurant-recommendation/predicates.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/ghost/restaurant-recommendation/recommend_2.ghost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/ghost/restaurant-recommendation/rules.ghost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/ghost/restaurant-recommendation/rules.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../schema/ghost/restaurant-recommendation/schemas.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sumo.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/.circleci/deprecated_config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/assets/NLP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/assets/VAComponents.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/assets/singnet-logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/dependencies/dockerfiles/BasicGRPCDockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/dependencies/dockerfiles/TestAtomSpaceGrpcDockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/dependencies/dockerfiles/VAOpencogDockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/dependencies/dockerfiles/VATestDockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/atom.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/named_entity_recognition.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/opencog_services.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/restaurant_info.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/sentiment_analysis.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/protos/session_manager.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/atomspace_grpc/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/atomspace_grpc/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/atomspace_grpc/mappers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/TODO.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/restaurant.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/restaurant_info_crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/restaurant_info_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/restaurant_info_to_scm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/scripts/compile_proto.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/scripts/test_restaurant_info_server.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/tests/test_restaurant_info_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/restaurant-info-server/world_restaurant_db.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/build_proto.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/create_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/db/interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/images/architecture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/images/sequence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/initial_fixtures.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/scripts/build_docker.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/scripts/compile_proto.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/scripts/session_manager_tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/session_manager_admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/session_manager_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/test.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/test_fixtures_integration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/test_fixtures_intelligence.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/services/named_entity_recognition/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/services/opencog_services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/services/sentiment_analysis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/test_database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/test_server_health.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/session-manager/tests/test_session_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/pre-fetch-utterances" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/predicates.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/recommend_2.ghost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/rules.ghost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/rules.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/ghost/restaurant-recommendation/schemas.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/grpc-client.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/http-requests.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/belo_horizonte/belo_horizonte.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/belo_horizonte/belo_horizonte_cuisines.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/belo_horizonte/restaurants.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/common-knowledge.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/demo-chinese.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/demo.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/toronto/restaurants.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/toronto/toronto.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/toronto/toronto_cuisines.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/knowledge/tripAdvisor2scm.tcl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/language-understanding.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/lib/node-types.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/lib/procedures.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/known-people-info/actions.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/known-people-info/knowledge.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/known-people-info/predicates.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/known-people-info/rules.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/restaurant-recommendation/actions.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/restaurant-recommendation/knowledge.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/restaurant-recommendation/predicates.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/plans/restaurant-recommendation/rules.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/prebuild.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/utils.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/va-opencog-service/OpencogSNETServiceFactory.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/va-opencog-service/OpencogSNETServiceFactory.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/va-opencog-service/VirtualAssistant.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/va-opencog-service/VirtualAssistant.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/virtual-assistant.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/src/virtual-assistant/web-utils.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/atomspace_grpc/run-tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/atomspace_grpc/test_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/atomspace_grpc/test_mapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/fixtures/grpc_service/grpc_service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/fixtures/grpc_service/grpc_service_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/integration/run-all-tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/integration/src/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/integration/src/IntegrationTest.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/integration/src/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/assets/restaurant_recommendation_0.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/assets/restaurant_recommendation_2.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/run-all-tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/src/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/src/IntelligenceTest.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/src/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/virtual-assistant/run-tests.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/virtual-assistant/test-grpc-client.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/gameunittest.cxxtest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/gameunittest.cxxtest" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wumpus/wumpus.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/wumpus/wumpus.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wumpus/wumpus.h" beforeDir="false" afterPath="$PROJECT_DIR$/wumpus/wumpus.h" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/src/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/cmake-build-default/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,75 +25,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Default" />
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/gameunittest.cxxtest">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/gameunittest.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wumpus/wumpus.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="23" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wumpus/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -240,40 +35,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/test/UTest.cpp" />
-        <option value="$PROJECT_DIR$/test/UTest.cxxtest" />
-        <option value="$PROJECT_DIR$/test/GameUTest.cxxtest" />
-        <option value="$PROJECT_DIR$/test/gametest.cpp" />
-        <option value="$PROJECT_DIR$/src/game.h" />
-        <option value="$PROJECT_DIR$/src/game.cpp" />
-        <option value="$PROJECT_DIR$/src/wumpus.h" />
-        <option value="$PROJECT_DIR$/src/wumpus.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/test/gametest.h" />
-        <option value="$PROJECT_DIR$/src/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/test/gameunittest.cxxtest" />
-        <option value="$PROJECT_DIR$/test/foo_test.cc" />
-        <option value="$PROJECT_DIR$/test/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/tests/foo_test.cc" />
-        <option value="$PROJECT_DIR$/wumpus/wumpus.cpp" />
-        <option value="$PROJECT_DIR$/tests/gameunittest.cxxtest" />
-        <option value="$PROJECT_DIR$/tests/gameunittest.h" />
-        <option value="$PROJECT_DIR$/tests/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/tests/gameunittest.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
     <option name="y" value="-4" />
@@ -281,34 +42,6 @@
     <option name="height" value="760" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="wumpus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wumpus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wumpus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="wumpus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
@@ -402,136 +135,8 @@
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46990000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24491392" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32763976" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49843505" weight="0.29968944" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32735425" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.29985008" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49921754" weight="0.32763976" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.32608697" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24491392" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32763976" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49843505" weight="0.29968944" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32735425" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.29985008" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49921754" visible="true" weight="0.32763976" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.32608697" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/GameUTest.cxxtest" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/gametest.cpp" />
-    <entry file="file://$PROJECT_DIR$/test/test.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/cmake-build-debug/CMakeCache.txt" />
-    <entry file="file://$PROJECT_DIR$/src/cmake-build-debug/cmake_install.cmake" />
-    <entry file="file://$PROJECT_DIR$/src/cmake-build-debug/Makefile" />
-    <entry file="file://$PROJECT_DIR$/src/wumpus.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/cmake-build-debug/Project.cbp" />
-    <entry file="file://$PROJECT_DIR$/src/wumpus.h" />
-    <entry file="file://$PROJECT_DIR$/src/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/CMakeLists.txt" />
-    <entry file="file://$PROJECT_DIR$/test/checktest.cpp" />
-    <entry file="file://$PROJECT_DIR$/test/gametest.h" />
-    <entry file="file://$PROJECT_DIR$/cmake/ FindCxxTest.cmake " />
-    <entry file="file://$PROJECT_DIR$/tests/foo_test.h" />
-    <entry file="file://$PROJECT_DIR$/cmake/FindCxxtest.cmake" />
-    <entry file="file://$PROJECT_DIR$/wumpus/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wumpus/wumpus.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/runner.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/gameunittest.cxxtest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/gameunittest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

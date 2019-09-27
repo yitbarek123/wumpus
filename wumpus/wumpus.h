@@ -15,4 +15,5 @@ public:
     bool check_failed(int i, int j);
     void build_ui();
     bool play();
+    void delayPrint(int durationInSeconds);
 };
