@@ -142,10 +142,7 @@
       <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/intelligence/src/Makefile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/virtual-assistant/run-tests.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../virtual-assistant-va-em/tests/virtual-assistant/test-grpc-client.scm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wumpus/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/wumpus/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wumpus/wumpus.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/wumpus/wumpus.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wumpus/wumpus.h" beforeDir="false" afterPath="$PROJECT_DIR$/wumpus/wumpus.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/src/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -233,7 +230,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="200" />
+          <entry key="cpp" value="251" />
           <entry key="cxxtest" value="124" />
           <entry key="gitignore" value="20" />
           <entry key="h" value="169" />
@@ -243,7 +240,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="247" />
-          <entry key="ObjectiveC" value="369" />
+          <entry key="ObjectiveC" value="420" />
           <entry key="PLAIN_TEXT" value="144" />
         </counts>
       </usages-collector>
@@ -251,49 +248,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wumpus/wumpus.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wumpus/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wumpus/wumpus.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="246">
+              <caret line="99" column="154" lean-forward="true" selection-start-line="99" selection-start-column="154" selection-end-line="99" selection-end-column="154" />
             </state>
           </provider>
         </entry>
@@ -334,8 +293,8 @@
         <option value="$PROJECT_DIR$/tests/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/gameunittest.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/wumpus/wumpus.cpp" />
         <option value="$PROJECT_DIR$/wumpus/wumpus.h" />
+        <option value="$PROJECT_DIR$/wumpus/wumpus.cpp" />
       </list>
     </option>
   </component>
@@ -357,7 +316,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,6 +341,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,17 +435,18 @@
       <workItem from="1569405185066" duration="1790000" />
       <workItem from="1569407015167" duration="1441000" />
       <workItem from="1569487863598" duration="203000" />
+      <workItem from="1569592565182" duration="1257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47208000" />
+    <option name="totallyTimeSpent" value="48417000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24491392" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.108763695" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -582,13 +542,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wumpus/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -599,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wumpus/wumpus.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="246">
+          <caret line="99" column="154" lean-forward="true" selection-start-line="99" selection-start-column="154" selection-end-line="99" selection-end-column="154" />
         </state>
       </provider>
     </entry>

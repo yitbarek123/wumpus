@@ -18,7 +18,7 @@ void wumpus::build_env() {
     }
     game[2][0] = -2;
     game[0][2] = -1;
-    game[3][1] = -1;
+    game[1][3] = -1;
     game[3][3] = 100;
 
     for (int i = 0; i < 4; i++) {
@@ -97,11 +97,11 @@ cout << "********************************" << endl << "|";
 
 bool wumpus::check_pit(int i, int j) {
     if (i > 0 && j > 0) {
-        if ((game[i - 1][j] != 6 || game[i][j - 1] != 6) || (game[i - 1][j] != 11 || game[i][j - 1] != 11)) {
-            false;
+        if (((game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12))==false) {
+            return false;
         }
     }
-    true;
+    return true;
 }
 
 bool wumpus::check_wumpus(int i, int j) {
@@ -199,7 +199,7 @@ bool wumpus::play() {
                     m = m + 1;
 
                 }
-                if (check_pit(m + 1, n) == false) {
+               else  if (check_pit(m + 1, n) == false) {
                     cout << "I am at" << m + 1 << n << endl;
                     if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true) {
                         return false;
@@ -211,6 +211,10 @@ bool wumpus::play() {
                     m = m + 1;
                     n = n + 1;
 
+                }
+                else{
+                    n = n + 1;
+                    m = m + 1;
                 }
                 diagonal_checked = true;
 
