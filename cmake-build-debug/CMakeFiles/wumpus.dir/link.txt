@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/wumpus.dir/wumpus/main.cpp.o CMakeFiles/wumpus.dir/wumpus/wumpus.cpp.o  -o wumpus 
