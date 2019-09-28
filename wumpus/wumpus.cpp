@@ -36,12 +36,7 @@ void wumpus::build_env() {
     game[2][2] = -2;
     game[3][3] = 100;
 /*
-    // gold
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = 100;
-    }
+
     // the first pit
 
     randomi = random()% 4;
@@ -66,6 +61,12 @@ void wumpus::build_env() {
     randomj = random()% 4;
     if (randomi + randomj > 1 && randomi * randomj != 1) {
         game[randomi][randomj] = -2;
+    }
+    // gold
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = 100;
     }
 */
 
