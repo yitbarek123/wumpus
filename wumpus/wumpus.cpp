@@ -36,7 +36,6 @@ void wumpus::build_env() {
     game[2][2] = -2;
     game[3][3] = 100;
 /*
-
     // the first pit
 
     randomi = random()% 4;
@@ -69,7 +68,6 @@ void wumpus::build_env() {
         game[randomi][randomj] = 100;
     }
 */
-
 
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -108,7 +106,7 @@ void wumpus::build_env() {
  * Build UI.
  */
 void wumpus::build_ui(){
-cout << "********************************" << endl << "|";
+  cout << "********************************" << endl << "|";
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             if (i == 0 && j == 0) {
@@ -265,7 +263,6 @@ bool wumpus::play() {
     bool game_over = false;
     bool gold = false;
     bool diagonal_checked = false;
-
     cout << "I am at position" << m << n << endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     while (true) {
