@@ -22,5 +22,6 @@ public:
     void wumpus_exist(int i, int j);
     void build_ui();
     bool play();
+    void display(int i,int j);
 };
 #endif //WUMPUS_WUMPUS_H

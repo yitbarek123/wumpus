@@ -112,6 +112,16 @@ cout << "********************************" << endl << "|";
 }
 
 /**
+ * Logs current position.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ */
+void wumpus::display(int i,int j){
+    cout << "I am at" << i << j << endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+}
+
+/**
  * Check for existence of pit diagonally.
  * @param i the row of the cell
  * @param j the column of the cell
@@ -253,16 +263,11 @@ bool wumpus::play() {
                 cout << "no pit at" << m + 1 << n + 1 << endl;
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 wumpus_exist(m,n);
-
-                //if (check_pit(m, n + 1) == false) {
-                cout << "I am at" << m << n + 1 << endl;
-                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                display(m,n+1);
                 if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
                         return false;
                     }
-                    cout << "I am at" << m + 1 << n + 1 << endl;
-                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
+                display(m+1,n+1);
                 if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
                         return false;
                     }
@@ -278,13 +283,11 @@ bool wumpus::play() {
                     cout << "no pit at" << m - 1 << n + 1 << endl;
                     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                     if (check_pit(m - 1, n) == false && (m < 4 && n < 4)) {
-                        cout << "I am at" << m - 1 << n << endl;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                        display(m-1,n);
                         if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
                             return false;
                         }
-                        cout << "I am at" << m - 1 << n + 1 << endl;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                        display(m-1,n+1);
                         if (check_gold(m - 1, n + 1) == true ||
                             check_failed(m - 1, n + 1) == true && (m < 4 && n < 4)) {
                             return false;
@@ -302,14 +305,12 @@ bool wumpus::play() {
                         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                     }
                     if (check_pit(m, n - 1) == false) {
-                        cout << "I am at" << m << n - 1 << endl;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                        display(m,n-1);
                         if (check_gold(m, n - 1) == true || check_failed(m, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         if(m+1<4 && n-1 >0) {
-                            cout << "I am at" << m + 1 << n - 1 << endl;
-                            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                            display(m+1,n-1);
                         }
                         if (check_gold(m + 1, n - 1) == true || check_failed(m + 1, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
@@ -318,14 +319,12 @@ bool wumpus::play() {
                         m = m + 1;
                     }
                     if (check_pit(m + 1, n) == false && (m < 4 && n < 4)) {
-                        cout << "I am at" << m << n + 1 <<endl;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                        display(m,n+1);
                         if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         if(m+1<4 && n-1 >0) {
-                            cout << "I am at" << m + 1 << n - 1 << endl;
-                            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                            display(m+1,n-1);
                         }
                         if (check_gold(m + 1, n - 1) == true || check_failed(m + 1, n - 1) == true && (m < 4 && n < 4)) {
                             return false;
