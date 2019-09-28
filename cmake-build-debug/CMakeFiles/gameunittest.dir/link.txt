@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/gameunittest.dir/tests/gameunittest.cpp.o  -o gameunittest 
