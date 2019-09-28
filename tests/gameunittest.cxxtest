@@ -4,24 +4,33 @@
 
 #include <cxxtest/TestSuite.h>
 #include "../wumpus/wumpus.cpp"
+
 class gametest : public CxxTest::TestSuite
 {
 
+//game[0][3] = -1;
+//game[3][2] = -1;
+//game[3][1] = -1;
+//game[2][2] = -2;
+//game[3][3] = 100;
+
+wumpus t;
 
 public:
-    void testgamefailled( void ) {
-
-        TS_ASSERT_EQUALS(true, true);
+    void testgamefailled( void )
+     {
+        t.build_env();
+        TS_ASSERT_EQUALS(t.check_failed(0,3), true);
     }
     void test_pit( void )
     {
-
-        TS_ASSERT_EQUALS(true, true );
+        t.build_env();
+        TS_ASSERT_EQUALS(t.check_pit(2,1), true );
     }
     void test_gold( void )
     {
-
-        TS_ASSERT_EQUALS(true, true );
+        t.build_env();
+        TS_ASSERT_EQUALS(t.check_gold(3,3), true );
     }
     void test_wumpus( void )
     {

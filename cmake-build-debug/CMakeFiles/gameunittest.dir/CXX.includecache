@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yitbarek/Desktop/experment/final/wumpus/tests/gameunittest.cpp
+cxxtest/TestListener.h
+-
+cxxtest/TestTracker.h
+-
+cxxtest/TestRunner.h
+-
+cxxtest/RealDescriptions.h
+-
+cxxtest/TestMain.h
+-
+cxxtest/ErrorPrinter.h
+-
+gameunittest.cxxtest
+/home/yitbarek/Desktop/experment/final/wumpus/tests/gameunittest.cxxtest
+cxxtest/Root.cpp
+-
+
+/home/yitbarek/Desktop/experment/final/wumpus/tests/gameunittest.cxxtest
+cxxtest/TestSuite.h
+-
+../wumpus/wumpus.cpp
+/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.cpp
+
+/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.cpp
+iostream
+-
+wumpus.h
+/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.h
+
+/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.h
+
