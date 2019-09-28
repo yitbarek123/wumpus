@@ -15,6 +15,7 @@ public:
     bool check_gold(int i, int j);
     bool check_failed(int i, int j);
     bool check_wumpus_upper(int i, int j);
+    bool check_pit_lower(int i, int j);
     void wumpus_exist(int i, int j);
     void build_ui();
     bool play();

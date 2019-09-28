@@ -1,6 +1,6 @@
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/CMakeFiles/gameunittest.dir
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/CMakeFiles/wumpus.dir
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
-/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/CMakeFiles/gameunittest.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/CMakeFiles/wumpus.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
+/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/tests/CMakeFiles/edit_cache.dir

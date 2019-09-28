@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yitbarek/Desktop/experment/final/wumpus/tests/gameunittest.cpp" "/home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug/CMakeFiles/gameunittest.dir/tests/gameunittest.cpp.o"
+  "/home/yitbarek/Desktop/experment/Project/wumpus/tests/gameunittest.cpp" "/home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug/CMakeFiles/gameunittest.dir/tests/gameunittest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

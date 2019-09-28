@@ -9,8 +9,8 @@ class gametest : public CxxTest::TestSuite
 {
 
 //game[0][3] = -1;
-//game[3][2] = -1;
 //game[3][1] = -1;
+//game[3][0] = -1;
 //game[2][2] = -2;
 //game[3][3] = 100;
 
@@ -20,12 +20,12 @@ public:
     void testgamefailled( void )
      {
         t.build_env();
-        TS_ASSERT_EQUALS(t.check_failed(0,3), true);
+        TS_ASSERT_EQUALS(t.check_failed(3,1), true);
     }
     void test_pit( void )
     {
         t.build_env();
-        TS_ASSERT_EQUALS(t.check_pit(2,1), true );
+        TS_ASSERT_EQUALS(t.check_pit_lower(3,1), true );
     }
     void test_gold( void )
     {

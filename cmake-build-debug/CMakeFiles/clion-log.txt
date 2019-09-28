@@ -1,4 +1,4 @@
-/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yitbarek/Desktop/experment/final/wumpus
+/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yitbarek/Desktop/experment/Project/wumpus
 -- The C compiler identification is GNU 5.4.0
 -- The CXX compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -16,4 +16,4 @@
 -- Found CxxTest: /usr/include  
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/yitbarek/Desktop/experment/final/wumpus/cmake-build-debug
+-- Build files have been written to: /home/yitbarek/Desktop/experment/Project/wumpus/cmake-build-debug

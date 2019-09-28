@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.cpp
+/home/yitbarek/Desktop/experment/Project/wumpus/wumpus/wumpus.cpp
 chrono
 -
 thread
@@ -14,7 +14,7 @@ thread
 iostream
 -
 wumpus.h
-/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.h
+/home/yitbarek/Desktop/experment/Project/wumpus/wumpus/wumpus.h
 
-/home/yitbarek/Desktop/experment/final/wumpus/wumpus/wumpus.h
+/home/yitbarek/Desktop/experment/Project/wumpus/wumpus/wumpus.h
 

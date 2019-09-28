@@ -1,4 +1,4 @@
-# Install script for directory: /home/yitbarek/Desktop/experment/final/wumpus/tests
+# Install script for directory: /home/yitbarek/Desktop/experment/Project/wumpus/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
