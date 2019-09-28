@@ -128,12 +128,7 @@ void wumpus::display(int i,int j){
  * @return true if pit exist, else false
  */
 bool wumpus::check_pit(int i, int j) {
-    if (i > 0 && j > 0) {
-        if (((game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12))==false) {
-            return false;
-        }
-    }
-    return true;
+    return (game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12) && (i > 0 && j > 0);
 }
 
 /**
@@ -143,12 +138,7 @@ bool wumpus::check_pit(int i, int j) {
  * @return true if pit exist, else false
  */
 bool wumpus::check_pit_lower(int i, int j) {
-    if (i > 0 && j < 3) {
-        if (((game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j+1] == 6 || game[i][j+1]==11||game[i][j+1]==12))==false) {
-            return false;
-        }
-    }
-    return true;
+    return (game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j+1] == 6 || game[i][j+1]==11||game[i][j+1]==12) && (i > 0 && j < 3);
 }
 
 /**
@@ -158,12 +148,7 @@ bool wumpus::check_pit_lower(int i, int j) {
  * @return true if pit exist, else false
  */
 bool wumpus::check_pit_upper(int i, int j) {
-    if (i > 0 && j > 0) {
-        if (((game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12)&& (game[i+1][j] == 6 || game[i+1][j]==11||game[i+1][j]==12))==false) {
-            return false;
-        }
-    }
-    return true;
+    return (game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12)&& (game[i+1][j] == 6 || game[i+1][j]==11||game[i+1][j]==12) && (i > 0 && j > 0);
 }
 
 /**
@@ -173,12 +158,7 @@ bool wumpus::check_pit_upper(int i, int j) {
  * @return true if wumpus exist, else false
  */
 bool wumpus::check_wumpus(int i, int j) {
-    if (i > 0 && j > 0) {
-        if ((game[i - 1][j] == 5 || game[i - 1][j] == 11) && (game[i][j - 1] == 5 || game[i][j - 1] == 11)) {
-            return true;
-        }
-    }
-    return false;
+    return (game[i - 1][j] == 5 || game[i - 1][j] == 11) && (game[i][j - 1] == 5 || game[i][j - 1] == 11)&&(i > 0 && j > 0);
 }
 
 /**
@@ -188,12 +168,7 @@ bool wumpus::check_wumpus(int i, int j) {
  * @return true if wumpus exist, else false
  */
 bool wumpus::check_wumpus_upper(int i, int j) {
-    if (i > 0 && j > 0) {
-        if ((game[i][j-1] == 5 || game[i][j-1] == 11) && (game[i][j +1] == 5 || game[i][j +1] == 11)) {
-            return true;
-        }
-    }
-    return false;
+    return (game[i][j-1] == 5 || game[i][j-1] == 11) && (game[i][j +1] == 5 || game[i][j +1] == 11) && (i > 0 && j > 0);
 }
 
 /**
