@@ -23,17 +23,52 @@ static int game[4][4];
  * Initalize variables.
  */
 void wumpus::build_env() {
-
+    int randomi, randomj;
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             game[i][j] = 0;
         }
     }
+    //The test is build on the following arrangment
     game[0][3] = -1;
     game[3][1] = -1;
     game[3][0] = -1;
     game[2][2] = -2;
     game[3][3] = 100;
+/*
+    // gold
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = 100;
+    }
+    // the first pit
+
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = -1;
+    }
+    // the second pit
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = -1;
+    }
+    // the third pit
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = -1;
+    }
+    // wumpus
+    randomi = random()% 4;
+    randomj = random()% 4;
+    if (randomi + randomj > 1 && randomi * randomj != 1) {
+        game[randomi][randomj] = -2;
+    }
+*/
+
 
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -257,20 +292,23 @@ bool wumpus::play() {
                 if (check_pit_upper(m - 1, n + 1) == false) {
                     cout << "no pit at" << m - 1 << n + 1 << endl;
                     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-                    if (check_pit(m - 1, n) == false && (m < 4 && n < 4)) {
+                    //if (check_pit(m - 1, n) == false && (m < 4 && n < 4)) {
                         display(m-1,n);
                         if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         display(m-1,n+1);
-                        if (check_gold(m - 1, n + 1) == true ||
+                        display(m-1,n);
+                        display(m,n);
+                    if (check_gold(m - 1, n + 1) == true ||
                             check_failed(m - 1, n + 1) == true && (m < 4 && n < 4)) {
                             return false;
                         }
                         n = n + 1;
                         m = m - 1;
-                    }
+                    //}
                 }
+             //   display(m,n);
                 m = temp1;
                 n = temp2;
                 //lower diagonal
