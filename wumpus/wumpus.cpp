@@ -1,13 +1,27 @@
-//
-// Created by yitbarek on 9/14/19.
-//
+/**
+ * wumpus.cpp ---
+ *
+ * Author: Hezkias
+ *         Yitbarek
+ *
+ */
+
+/**
+* build enviornment including UI and set the
+* sensory values.Then implement the algorithm.
+*/
 #include <chrono>
 #include <thread>
 #include <iostream>
 #include "wumpus.h"
 
+using namespace std;
+
 static int game[4][4];
 
+/**
+ * Initalize variables.
+ */
 void wumpus::build_env() {
 
     for (int i = 0; i < 4; i++) {
@@ -54,7 +68,9 @@ void wumpus::build_env() {
         }
     }
 }
-
+/**
+ * Build UI.
+ */
 void wumpus::build_ui(){
 cout << "********************************" << endl << "|";
     for (int i = 0; i < 4; i++) {
@@ -95,6 +111,12 @@ cout << "********************************" << endl << "|";
     }
 }
 
+/**
+ * Check for existence of pit diagonally.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if pit exist, else false
+ */
 bool wumpus::check_pit(int i, int j) {
     if (i > 0 && j > 0) {
         if (((game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12))==false) {
@@ -103,6 +125,13 @@ bool wumpus::check_pit(int i, int j) {
     }
     return true;
 }
+
+/**
+ * Check for existence of pit for lower diagonal.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if pit exist, else false
+ */
 bool wumpus::check_pit_lower(int i, int j) {
     if (i > 0 && j < 3) {
         if (((game[i - 1][j] == 6 || game[i-1][j]==11||game[i-1][j]==12)&& (game[i][j+1] == 6 || game[i][j+1]==11||game[i][j+1]==12))==false) {
@@ -111,6 +140,13 @@ bool wumpus::check_pit_lower(int i, int j) {
     }
     return true;
 }
+
+/**
+ * Check for existence of pit for upper diagonal.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if pit exist, else false
+ */
 bool wumpus::check_pit_upper(int i, int j) {
     if (i > 0 && j > 0) {
         if (((game[i][j-1] == 6 || game[i][j-1]==11||game[i][j-1]==12)&& (game[i+1][j] == 6 || game[i+1][j]==11||game[i+1][j]==12))==false) {
@@ -120,6 +156,12 @@ bool wumpus::check_pit_upper(int i, int j) {
     return true;
 }
 
+/**
+ * Check for existence of wumpus for diagonally.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if wumpus exist, else false
+ */
 bool wumpus::check_wumpus(int i, int j) {
     if (i > 0 && j > 0) {
         if ((game[i - 1][j] == 5 || game[i - 1][j] == 11) && (game[i][j - 1] == 5 || game[i][j - 1] == 11)) {
@@ -129,6 +171,12 @@ bool wumpus::check_wumpus(int i, int j) {
     return false;
 }
 
+/**
+ * Check for existence of wumpus for upper diagonal.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if wumpus exist, else false
+ */
 bool wumpus::check_wumpus_upper(int i, int j) {
     if (i > 0 && j > 0) {
         if ((game[i][j-1] == 5 || game[i][j-1] == 11) && (game[i][j +1] == 5 || game[i][j +1] == 11)) {
@@ -138,6 +186,12 @@ bool wumpus::check_wumpus_upper(int i, int j) {
     return false;
 }
 
+/**
+ * Check for existence of gold on the current cell.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if gold exist, else false
+ */
 bool wumpus::check_gold(int i, int j) {
     if (game[i][j] > 50) {
         cout << "the gold is at" << i << j;
@@ -146,6 +200,12 @@ bool wumpus::check_gold(int i, int j) {
     return false;
 }
 
+/**
+ * Check for game_failed.
+ * @param i the row of the cell
+ * @param j the column of the cell
+ * @return true if pit or wumpus  exist, else false
+ */
 bool wumpus::check_failed(int i, int j) {
     if ((game[i][j] == -1) || (game[i][j] == -2)|| (game[i][j] == -6)) {
         cout << "failed at" << i << j;
@@ -154,6 +214,12 @@ bool wumpus::check_failed(int i, int j) {
     return false;
 }
 
+/**
+ * Calls check for wumpus function and
+ * kills if wumpus is found.
+ * @param m the row of the cell
+ * @param n the column of the cell
+ */
 void wumpus::wumpus_exist(int m, int n){
     if (wumpus::check_wumpus(m + 1, n + 1) == true && (m + 1 < 4 && n + 1 < 4)) {
         cout << "wumpus is at" << m + 1 << n + 1 << endl;
@@ -166,6 +232,10 @@ void wumpus::wumpus_exist(int m, int n){
     }
 }
 
+/**
+ * traverse the matrix until the
+ * game over or the gold is found.
+ */
 bool wumpus::play() {
     int m = 0;
     int n = 0;

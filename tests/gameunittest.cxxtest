@@ -1,6 +1,10 @@
-//
-// Created by yitbarek on 9/25/19.
-//
+/**
+ * gameunittest.cxxtest
+ *
+ * Author: Hezkias
+ *         Yitbarek
+ *
+ */
 
 #include <cxxtest/TestSuite.h>
 #include "../wumpus/wumpus.cpp"

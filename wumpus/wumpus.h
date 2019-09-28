@@ -1,10 +1,13 @@
-//
-// Created by yitbarek on 9/20/19.
-//
+/**
+ * wumpus.h ---
+ *
+ * Author: Hezkias
+ *         Yitbarek
+ *
+ */
 
-using namespace std;
-
-
+#ifndef WUMPUS_WUMPUS_H
+#define WUMPUS_WUMPUS_H
 class wumpus {
 
 public:
@@ -20,3 +23,4 @@ public:
     void build_ui();
     bool play();
 };
+#endif //WUMPUS_WUMPUS_H

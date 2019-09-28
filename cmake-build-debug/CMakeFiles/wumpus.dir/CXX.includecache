@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/yitbarek/Desktop/experment/Project/wumpus/wumpus/main.cpp
+iostream
+-
+wumpus.h
+/home/yitbarek/Desktop/experment/Project/wumpus/wumpus/wumpus.h
+
 /home/yitbarek/Desktop/experment/Project/wumpus/wumpus/wumpus.cpp
 chrono
 -
