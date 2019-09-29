@@ -20,6 +20,8 @@ Once the above requirements are fulfilled, do the following
  * Navigate to the directory 
  * cd wumpus
  
+ # Semantic tableaux
+
 ```
                         
                         pit do not exist
