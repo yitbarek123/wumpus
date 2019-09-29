@@ -1,19 +1,27 @@
-//
-// Created by yitbarek on 9/20/19.
-//
+/**
+ * wumpus.h ---
+ *
+ * Author: Hezkias
+ *         Yitbarek
+ *
+ */
 
-using namespace std;
-
-
+#ifndef WUMPUS_WUMPUS_H
+#define WUMPUS_WUMPUS_H
 class wumpus {
 
 public:
     void build_env();
     bool check_pit(int i, int j);
+    bool check_pit_upper(int i, int j);
     bool check_wumpus(int i, int j);
     bool check_gold(int i, int j);
     bool check_failed(int i, int j);
+    bool check_wumpus_upper(int i, int j);
+    bool check_pit_lower(int i, int j);
+    void wumpus_exist(int i, int j);
     void build_ui();
     bool play();
-    void delayPrint(int durationInSeconds);
+    void display(int i,int j);
 };
+#endif //WUMPUS_WUMPUS_H

@@ -1,2 +1,4 @@
 [Bb]uild/
-[Cc]make-build-default/
+[Cc]make-build-debug/
+.idea/
+cmake-build-default
