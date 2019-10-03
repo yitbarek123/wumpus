@@ -21,6 +21,7 @@ public:
     bool check_pit_lower(int i, int j);
     void wumpus_exist(int i, int j);
     void build_ui();
+    void build_ui2(int k, int l);
     bool play();
     void display(int i,int j);
 };

@@ -42,6 +42,10 @@ public:
         TS_ASSERT_EQUALS(true, true );
     }
 
-
+    void test_pit_upper( void )
+    {
+        t.build_env();
+        TS_ASSERT_EQUALS(t.check_pit_upper(0,3), true );
+    }
 
 };
