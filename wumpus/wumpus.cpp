@@ -187,42 +187,42 @@ void wumpus::build_env() {
  * Build UI.
  */
 void wumpus::build_ui2(int k, int l){
-    cout << "************" << endl << "|";
+    cout << "**********************" << endl << "|";
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             if (i == k && j == l) {
-                cout << " A ";
+                cout << "  A  ";
             }
             if (game[i][j] == 0  && ((i==k && j==l)==false)) {
-                cout << " 0 ";
+                cout << "  0  ";
             }
             if (game[i][j] == -1  && ((i==k && j==l)==false)) {
-                cout << " P ";
+                cout << "  P  ";
             }
             if (game[i][j] == -2  && ((i==k && j==l)==false)) {
-                cout << " W ";
+                cout << "  W  ";
             }
             if (game[i][j] == 5  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 6  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 12  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 17  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 11  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] > 50  && ((i==k && j==l)==false)) {
-                cout << " G ";
+                cout << "  G  ";
             }
         }
         cout << endl;
-        cout << "************" << endl;
+        cout << "**********************" << endl;
         if (i < 3) {
             cout << "|";
         }
