@@ -24,5 +24,6 @@ public:
     void build_ui2(int k, int l);
     bool play();
     void display(int i,int j);
+    int generateRandomNumber(int lowerBound, int UpperBound);
 };
 #endif //WUMPUS_WUMPUS_H
