@@ -386,6 +386,7 @@ void wumpus::wumpus_exist(int m, int n){
 }
 
 
+
 /**
  * traverse the matrix until the
  * game over or the gold is found.
@@ -407,19 +408,16 @@ bool wumpus::play() {
                 //cout << "no pit at" << m + 1 << n + 1 << endl;
                 //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 wumpus_exist(m,n);
-
+                display(m,n+1);
+                display(m,n);
                 if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
                         return false;
                     }
+                display(m+1,n);
                 if (check_gold(m+1, n) == true || check_failed(m+1, n) == true) {
                     return false;
                 }
-                if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
-                        return false;
-                    }
-                display(m,n+1);
-                display(m,n);
-                display(m+1,n);
+
                 if (check_pit(m + 1, n+1) == false && (m < 4 && n < 4)) {
                     cout << "no pit at" << m + 1 << n + 1 << endl;
                     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
