@@ -333,6 +333,10 @@ bool wumpus::check_wumpus_upper(int i, int j) {
     return (game[i][j-1] == 5 || game[i][j-1] == 11 || game[i][j-1] == 17) && (game[i+1][j] == 5 || game[i+1][j] == 11|| game[i+1][j] == 17) && (i > -1 && j > -1);
 }
 
+bool wumpus::check_wumpus_lower(int i, int j) {
+    return (game[i-1][j] == 5 || game[i-1][j] == 11 || game[i-1][j] == 17) && (game[i][j+1] == 5 || game[i][j+1] == 11|| game[i][j+1] == 17) && (i > -1 && j > -1);
+}
+
 /**
  * Check for existence of gold on the current cell.
  * @param i the row of the cell
@@ -380,6 +384,7 @@ void wumpus::wumpus_exist(int m, int n){
         n=n+1;
     }
 }
+
 
 /**
  * traverse the matrix until the
@@ -446,7 +451,7 @@ bool wumpus::play() {
                         display(m-1,n);
                         display(m,n);
                         display(m,n+1);
-                       if (check_pit_upper(m - 1, n+1) == false && (m < 4 && n < 4)) {
+                       if (check_pit_upper(m - 1, n+1) == false && (m < 4 && n < 4) && check_wumpus_upper(m-1,n+1)==false) {
                            cout << "no pit at" << m - 1 << n + 1 << endl;
                            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                            display(m - 1, n + 1);
@@ -487,11 +492,13 @@ bool wumpus::play() {
                         if(m+1<4 && n-1 >0) {
                           //  display(m+1,n-1);
                         }
-                if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4)) {
+                if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4) && check_wumpus_lower(m+1,n-1)==false) {
                     display(m+1,n-1);
                     cout << "no pit at" << m + 1 << n - 1 << endl;
                     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
+                    if (check_gold(m+1, n-1) == true || check_failed(m+1, n-1) == true) {
+                        return false;
+                    }
                 }
           //      }
 
