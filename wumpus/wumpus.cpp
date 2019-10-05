@@ -1,7 +1,7 @@
 /**
  * wumpus.cpp ---
  *
- * Author: Hezkias
+ * Author: Hizkias
  *         Yitbarek
  *
  */
@@ -12,6 +12,8 @@
 */
 #include <chrono>
 #include <thread>
+#include <stdlib.h>
+#include <time.h>
 #include <iostream>
 #include "wumpus.h"
 
@@ -30,11 +32,88 @@ void wumpus::build_env() {
         }
     }
     //The test is build on the following arrangment
-    game[0][3] = -1;//
-    game[3][1] = -1;// There is pit
-    game[1][3] = 100;//
-    game[2][0] = -2;// There is wumpus
-    game[3][3] = -1;// There is gold
+    bool pitsAdded = false;
+    bool wumpusAdded = false;
+    bool goldAdded = false;
+
+//    game[0][3] = -1;//
+//    game[3][1] = -1;// There is pit
+//    game[1][3] = 100;//
+//    game[2][0] = -2;// There is wumpus
+//    game[3][3] = -1;// There is gold
+
+    // adding pits
+    while (!pitsAdded){
+        cout << "Adding pits " << endl;
+        int addedPitsCount = 0;
+        int row, col;
+        pitRowAndCol:
+             row = this->generateRandomNumber(0, 3);
+             col = this->generateRandomNumber(0, 3);
+
+       // make sure the upper four cells are free of any danger
+       if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
+           goto pitRowAndCol;
+       }
+       // wait until 3 pits added
+       while(addedPitsCount < 3){
+           if(game[row][col] == 0){
+               game[row][col] = -1;
+               addedPitsCount += 1;
+           }
+           else {
+               goto pitRowAndCol;
+           }
+       }
+       pitsAdded = true;
+    }
+
+
+    // adding wumpus
+    while (!wumpusAdded){
+        cout << "Adding wumpus " << endl;
+        int row, col;
+        wumpusRowAndCol:
+        row = this->generateRandomNumber(0, 3);
+        col = this->generateRandomNumber(0, 3);
+        // make sure the upper four cells are free of any danger
+        if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
+            goto wumpusRowAndCol;
+        }
+        else{
+            if (game[row][col] == 0){
+                game[row][col] = -2;
+                wumpusAdded = true;
+            }
+            else {
+                goto wumpusRowAndCol;
+            }
+        }
+    }
+    // adding gold
+
+    while(!goldAdded){
+        cout << "Adding gold" << endl;
+        int row, col;
+        goldRowAndCol:
+            row = this->generateRandomNumber(0, 3);
+            col = this->generateRandomNumber(0, 3);
+        if(row == 0 && col == 0){
+            goto goldRowAndCol;
+        }
+        else {
+            if(game[row][col] == 0){
+                game[row][col] = 100;
+                goldAdded = true;
+            }
+            else {
+                goto  goldRowAndCol;
+            }
+        }
+
+    }
+
+
 /*
     // the first pit
 
@@ -108,42 +187,42 @@ void wumpus::build_env() {
  * Build UI.
  */
 void wumpus::build_ui2(int k, int l){
-    cout << "************" << endl << "|";
+    cout << "**********************" << endl << "|";
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             if (i == k && j == l) {
-                cout << " A ";
+                cout << "  A  ";
             }
             if (game[i][j] == 0  && ((i==k && j==l)==false)) {
-                cout << " 0 ";
+                cout << "  0  ";
             }
             if (game[i][j] == -1  && ((i==k && j==l)==false)) {
-                cout << " P ";
+                cout << "  P  ";
             }
             if (game[i][j] == -2  && ((i==k && j==l)==false)) {
-                cout << " W ";
+                cout << "  W  ";
             }
             if (game[i][j] == 5  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 6  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 12  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 17  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] == 11  && ((i==k && j==l)==false)) {
-                cout << " F ";
+                cout << "  F  ";
             }
             if (game[i][j] > 50  && ((i==k && j==l)==false)) {
-                cout << " G ";
+                cout << "  G  ";
             }
         }
         cout << endl;
-        cout << "************" << endl;
+        cout << "**********************" << endl;
         if (i < 3) {
             cout << "|";
         }
@@ -430,4 +509,12 @@ bool wumpus::play() {
         }
 
     }
+}
+
+int wumpus::generateRandomNumber(int lowerBound, int UpperBound) {
+    // Use current time as
+    // seed for random generator
+    srand(time(0));
+    return (rand() %
+            (UpperBound - lowerBound + 1)) + lowerBound;
 }
