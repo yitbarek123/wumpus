@@ -48,24 +48,24 @@ void wumpus::build_env() {
         int addedPitsCount = 0;
         int row, col;
         pitRowAndCol:
-             row = this->generateRandomNumber(0, 3);
-             col = this->generateRandomNumber(0, 3);
+        row = this->generateRandomNumber(0, 3);
+        col = this->generateRandomNumber(0, 3);
 
-       // make sure the upper four cells are free of any danger
-       if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
-           goto pitRowAndCol;
-       }
-       // wait until 3 pits added
-       while(addedPitsCount < 3){
-           if(game[row][col] == 0){
-               game[row][col] = -1;
-               addedPitsCount += 1;
-           }
-           else {
-               goto pitRowAndCol;
-           }
-       }
-       pitsAdded = true;
+        // make sure the upper four cells are free of any danger
+        if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
+            goto pitRowAndCol;
+        }
+        // wait until 3 pits added
+        while(addedPitsCount < 3){
+            if(game[row][col] == 0){
+                game[row][col] = -1;
+                addedPitsCount += 1;
+            }
+            else {
+                goto pitRowAndCol;
+            }
+        }
+        pitsAdded = true;
     }
 
 
@@ -96,8 +96,8 @@ void wumpus::build_env() {
         cout << "Adding gold" << endl;
         int row, col;
         goldRowAndCol:
-            row = this->generateRandomNumber(0, 3);
-            col = this->generateRandomNumber(0, 3);
+        row = this->generateRandomNumber(0, 3);
+        col = this->generateRandomNumber(0, 3);
         if(row == 0 && col == 0){
             goto goldRowAndCol;
         }
@@ -113,40 +113,6 @@ void wumpus::build_env() {
 
     }
 
-
-/*
-    // the first pit
-
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = -1;
-    }
-    // the second pit
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = -1;
-    }
-    // the third pit
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = -1;
-    }
-    // wumpus
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = -2;
-    }
-    // gold
-    randomi = random()% 4;
-    randomj = random()% 4;
-    if (randomi + randomj > 1 && randomi * randomj != 1) {
-        game[randomi][randomj] = 100;
-    }
-*/
 
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -437,8 +403,14 @@ bool wumpus::play() {
                 temp1 = m;
                 temp2 = n;
                 //upper diagonal
+                    if(game[m][n]!=0){
+                       while(true) {
+                           display(m - 1, n);
+                           display(m, n);
+                       }
+                    }
 
-                    //if (check_pit(m - 1, n) == false && (m < 4 && n < 4)) {
+              //      if (game[m][n] == 0 && (m < 4 && n < 4)) {
 
                         if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
                             return false;
@@ -466,13 +438,13 @@ bool wumpus::play() {
                            display(m,n);
                        }
 
-              //}
+          //   }
 
              //   display(m,n);
                 m = temp1;
                 n = temp2;
                 //lower diagonal
-     //           if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4)) {
+             //   if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4)) {
        //             if(m+1<4 && n-1 >0) {
 
          //           }
@@ -498,7 +470,7 @@ bool wumpus::play() {
                         return false;
                     }
                 }
-          //      }
+            //    }
 
 
                 display(m+1,n);
