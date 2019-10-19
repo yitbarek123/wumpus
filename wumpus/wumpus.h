@@ -26,5 +26,9 @@ public:
     void display(int i,int j);
     bool check_wumpus_lower(int i, int j);
     int generateRandomNumber(int lowerBound, int UpperBound);
+    bool diagonal(int i, int j);
+    bool upper_diagonal(int i,int j);
+    bool lower_diagonal(int i,int j);
+
 };
 #endif //WUMPUS_WUMPUS_H

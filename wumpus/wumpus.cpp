@@ -35,83 +35,12 @@ void wumpus::build_env() {
     bool pitsAdded = false;
     bool wumpusAdded = false;
     bool goldAdded = false;
+    game[0][3] = -1;//
+    game[3][1] = -1;// There is pit
+    game[1][3] = 100;//
+    game[2][0] = -2;// There is wumpus
+    game[3][3] = -1;// There is gold
 
-//    game[0][3] = -1;//
-//    game[3][1] = -1;// There is pit
-//    game[1][3] = 100;//
-//    game[2][0] = -2;// There is wumpus
-//    game[3][3] = -1;// There is gold
-
-    // adding pits
-    while (!pitsAdded){
-        cout << "Adding pits " << endl;
-        int addedPitsCount = 0;
-        int row, col;
-        pitRowAndCol:
-        row = this->generateRandomNumber(0, 3);
-        col = this->generateRandomNumber(0, 3);
-
-        // make sure the upper four cells are free of any danger
-        if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
-            goto pitRowAndCol;
-        }
-        // wait until 3 pits added
-        while(addedPitsCount < 3){
-            if(game[row][col] == 0){
-                game[row][col] = -1;
-                addedPitsCount += 1;
-            }
-            else {
-                goto pitRowAndCol;
-            }
-        }
-        pitsAdded = true;
-    }
-
-
-    // adding wumpus
-    while (!wumpusAdded){
-        cout << "Adding wumpus " << endl;
-        int row, col;
-        wumpusRowAndCol:
-        row = this->generateRandomNumber(0, 3);
-        col = this->generateRandomNumber(0, 3);
-        // make sure the upper four cells are free of any danger
-        if((row == 0 && col == 0) || (row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1) ){
-            goto wumpusRowAndCol;
-        }
-        else{
-            if (game[row][col] == 0){
-                game[row][col] = -2;
-                wumpusAdded = true;
-            }
-            else {
-                goto wumpusRowAndCol;
-            }
-        }
-    }
-    // adding gold
-
-    while(!goldAdded){
-        cout << "Adding gold" << endl;
-        int row, col;
-        goldRowAndCol:
-        row = this->generateRandomNumber(0, 3);
-        col = this->generateRandomNumber(0, 3);
-        if(row == 0 && col == 0){
-            goto goldRowAndCol;
-        }
-        else {
-            if(game[row][col] == 0){
-                game[row][col] = 100;
-                goldAdded = true;
-            }
-            else {
-                goto  goldRowAndCol;
-            }
-        }
-
-    }
 
 
     for (int i = 0; i < 4; i++) {
@@ -195,7 +124,7 @@ void wumpus::build_ui2(int k, int l){
     }
 }
 void wumpus::build_ui(){
-  cout << "********************************" << endl << "|";
+    cout << "********************************" << endl << "|";
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             if (i == 0 && j == 0) {
@@ -352,6 +281,88 @@ void wumpus::wumpus_exist(int m, int n){
 }
 
 
+bool wumpus::diagonal(int m, int n) {
+    if (m < 3 && n < 3) {
+        if (m < 4 && n < 4) {
+            //cout << "no pit at" << m + 1 << n + 1 << endl;
+            //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            wumpus_exist(m, n);
+            display(m, n + 1);
+            display(m, n);
+            if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
+                return false;
+            }
+            display(m + 1, n);
+            if (check_gold(m + 1, n) == true || check_failed(m + 1, n) == true) {
+                return false;
+            }
+
+            if (check_pit(m + 1, n + 1) == false && (m < 4 && n < 4)) {
+                cout << "no pit at" << m + 1 << n + 1 << endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                display(m + 1, n + 1);
+
+                if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
+                    return false;
+                }
+
+            }
+
+
+        }
+    }
+    return true;
+}
+
+bool wumpus::upper_diagonal(int m,int n){
+    if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
+        return false;
+    }
+    if (check_gold(m, n+1) == true || check_failed(m, n+1) == true && (m < 4 && n < 4)) {
+        return false;
+    }
+    display(m-1,n);
+    display(m,n);
+    display(m,n+1);
+    if (check_pit_upper(m - 1, n+1) == false && (m < 4 && n < 4) && check_wumpus_upper(m-1,n+1)==false) {
+        cout << "no pit at" << m - 1 << n + 1 << endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        display(m - 1, n + 1);
+        if (check_gold(m-1, n+1) == true || check_failed(m-1, n+1) == true) {
+            return false;
+        }
+        display(m-1,n);
+        display(m,n);
+    }
+    else{
+        display(m,n);
+    }
+    return true;
+}
+
+bool wumpus::lower_diagonal(int m,int n){
+    display(m,n-1);
+    if (check_gold(m, n - 1) == true || check_failed(m, n - 1) == true && (m < 4 && n < 4)) {
+        return false;
+    }
+    display(m,n);
+    display(m+1,n);
+
+    if (check_gold(m+1, n) == true || check_failed(m+1, n) == true && (m < 4 && n < 4)) {
+        return false;
+    }
+
+    if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4) && check_wumpus_lower(m+1,n-1)==false) {
+        display(m+1,n-1);
+        cout << "no pit at" << m + 1 << n - 1 << endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        if (check_gold(m+1, n-1) == true || check_failed(m+1, n-1) == true) {
+            return false;
+        }
+    }
+    display(m+1,n);
+    display(m,n);
+}
 
 /**
  * traverse the matrix until the
@@ -364,129 +375,48 @@ bool wumpus::play() {
     int temp2 = 0;
     bool game_over = false;
     bool gold = false;
-    bool diagonal_checked = false;
+    bool diagonal_checked = true;
     cout << "I am at position" << m << n << endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     while (true) {
-
-        if (m < 3 && n < 3) {
-            if (m < 4 && n < 4)  {
-                //cout << "no pit at" << m + 1 << n + 1 << endl;
-                //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-                wumpus_exist(m,n);
-                display(m,n+1);
-                display(m,n);
-                if (check_gold(m, n + 1) == true || check_failed(m, n + 1) == true) {
-                        return false;
-                    }
-                display(m+1,n);
-                if (check_gold(m+1, n) == true || check_failed(m+1, n) == true) {
-                    return false;
-                }
-
-                if (check_pit(m + 1, n+1) == false && (m < 4 && n < 4)) {
-                    cout << "no pit at" << m + 1 << n + 1 << endl;
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-                    display(m+1,n+1);
-
-                    if (check_gold(m + 1, n + 1) == true || check_failed(m + 1, n + 1) == true) {
-                        return false;
-                    }
-                    n = n + 1;
-                    m = m + 1;
-                }
-
-
-                diagonal_checked = true;
-            }
-            if (diagonal_checked == true && (m < 4 && n < 4)) {
-                temp1 = m;
-                temp2 = n;
-                //upper diagonal
-                    if(game[m][n]!=0){
-                       while(true) {
-                           display(m - 1, n);
-                           display(m, n);
-                       }
-                    }
-
-              //      if (game[m][n] == 0 && (m < 4 && n < 4)) {
-
-                        if (check_gold(m - 1, n) == true || check_failed(m - 1, n) == true && (m < 4 && n < 4)) {
-                            return false;
-                        }
-                        if (check_gold(m, n+1) == true || check_failed(m, n+1) == true && (m < 4 && n < 4)) {
-                        return false;
-                    }
-                        display(m-1,n);
-                        display(m,n);
-                        display(m,n+1);
-                       if (check_pit_upper(m - 1, n+1) == false && (m < 4 && n < 4) && check_wumpus_upper(m-1,n+1)==false) {
-                           cout << "no pit at" << m - 1 << n + 1 << endl;
-                           std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-                           display(m - 1, n + 1);
-                           if (check_gold(m-1, n+1) == true || check_failed(m-1, n+1) == true) {
-                               return false;
-                           }
-                           display(m-1,n);
-                           display(m,n);
-
-                         //  n = n + 1;
-                       //    m = m - 1;
-                       }
-                       else{
-                           display(m,n);
-                       }
-
-          //   }
-
-             //   display(m,n);
-                m = temp1;
-                n = temp2;
-                //lower diagonal
-             //   if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4)) {
-       //             if(m+1<4 && n-1 >0) {
-
-         //           }
-                display(m,n-1);
-
-                if (check_gold(m, n - 1) == true || check_failed(m, n - 1) == true && (m < 4 && n < 4)) {
-                            return false;
-                        }
-                display(m,n);
-                display(m+1,n);
-
-                        if (check_gold(m+1, n) == true || check_failed(m+1, n) == true && (m < 4 && n < 4)) {
-                            return false;
-                        }
-                        if(m+1<4 && n-1 >0) {
-                          //  display(m+1,n-1);
-                        }
-                if (check_pit_lower(m + 1, n - 1) == false && (m < 4 && n < 4) && check_wumpus_lower(m+1,n-1)==false) {
-                    display(m+1,n-1);
-                    cout << "no pit at" << m + 1 << n - 1 << endl;
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-                    if (check_gold(m+1, n-1) == true || check_failed(m+1, n-1) == true) {
-                        return false;
-                    }
-                }
-            //    }
-
-
-                display(m+1,n);
-                display(m,n);
-                m = temp1;
-                n = temp2;
-                diagonal_checked = false;
-            }
+        diagonal(m,n);
+        if(diagonal(m,n)==true) {
+            n = n + 1;
+            m = m + 1;
         }
-        if (game[m][n] == -1 || game[m][n] == -2) {
-            cout << "I have failled at" << m << n;
+        else{
             return false;
         }
+        if (diagonal_checked == true && (m < 4 && n < 4)) {
+            temp1 = m;
+            temp2 = n;
+            //upper diagonal
+            if (game[m][n] != 0) {
+                if(game[m][n+1]==0){
+                    diagonal(m,n+1);
+                    return diagonal(m,n+1);
+                }
+                if(game[m+1][n]==0){
+                    diagonal(m+1,n);
+                    return diagonal(m+1,n);
+                }
+            }
+            else{
+                upper_diagonal(m,n);
+                lower_diagonal(m,n);
+                return upper_diagonal(m,n) && lower_diagonal(m,n);
+            }
 
+
+        }
+
+
+
+        //        diagonal_checked = false;
     }
 }
+
+
 
 int wumpus::generateRandomNumber(int lowerBound, int UpperBound) {
     // Use current time as
